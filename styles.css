@@ -38,6 +38,7 @@ p{
       margin: 0;
       padding: 20px;
       min-height: 100vh;
+      color: white;
     }
     .card-container {
       perspective: 1000px;
