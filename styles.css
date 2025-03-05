@@ -11,6 +11,7 @@
     border-radius: 8px;
     text-align: center;
     background-color: white;
+    color: black;
 }
 img{
  width: 100%;
@@ -33,29 +34,30 @@ p{
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #f0f0f0;
+    
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
       min-height: 100vh;
       color: white;
     }
-    .card-container {
+    .card-container1 {
       perspective: 1000px;
       margin-bottom: 20px;
     }
-    .card {
+    .card1 {
       width: 150px;
       height: 200px;
       position: relative;
       transform-style: preserve-3d;
       transition: transform 0.6s;
       cursor: pointer;
+      
     }
-    .card.flipped {
+    .card1.flipped {
       transform: rotateY(180deg);
     }
-    .card .side {
+    .card1 .side {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -69,11 +71,11 @@ p{
       padding: 10px;
       box-sizing: border-box;
     }
-    .card .front {
+    .card1 .front {
       background-color: #2e8b57;
       color: white;
     }
-    .card .back {
+    .card1 .back {
       background-color: #fff;
       color: #000;
       transform: rotateY(180deg);
@@ -97,3 +99,23 @@ p{
       text-align: left;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     }
+    
+    @media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+}
