@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King's Cup - Single Player</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .card-container {
+            perspective: 1000px;
+        }
+        .card {
+            width: 150px;
+            height: 200px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        .card .front, .card .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        .card .front {
+            background-color: #2e8b57;
+            color: #ffffff;
+        }
+        .card .back {
+            background-color: #ffffff;
+            color: #000000;
+            transform: rotateY(180deg);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card-container">
+    <div class="card" id="card">
+        <div class="front">
+            Click to Draw
+        </div>
+        <div class="back" id="card-value">
+            <!-- Card value will be displayed here -->
+        </div>
+    </div>
+</div>
+
+<div class="buttons">
+    <button onclick="drawCard()">Draw Card</button>
+    <button onclick="openModal()">Instructions</button>
+</div>
+
+<!-- Instructions Modal -->
+<div id="instructionsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Game Instructions</h2>
+        <p>Welcome to King's Cup! Here's how to play:</p>
+        <ul>
+            <li>Click "Draw Card" to draw a card.</li>
+            <li>The card's value will be displayed after the flip animation.</li>
+            <li>Follow the traditional King's Cup rules based on the card drawn.</li>
+        </ul>
+        <p>Enjoy the game!</p>
+    </div>
+</div>
+
+<script>
+    // Sample deck of cards
+    const deck = [
+        'Ace of Spades', '2 of Hearts', '3 of Diamonds', '4 of Clubs',
+        '5 of Spades', '6 of Hearts', '7 of Diamonds', '8 of Clubs',
+        '9 of Spades', '10 of Hearts', 'Jack of Diamonds', 'Queen of Clubs', 'King of Spades'
+    ];
+
+    // Function to draw a card
+    function drawCard() {
+        const card = document.getElementById('card');
+        const cardValue = document.getElementById('card-value');
+        // Get a random card from the deck
+        const randomCard = deck[Math.floor(Math.random() * deck.length)];
+        // Set the card value
+        cardValue.textContent = randomCard;
+        // Add the 'flipped' class to trigger the animation
+        card.classList.add('flipped');
+        // Remove the 'flipped' class after the animation completes
+        setTimeout(() => {
+            card.classList.remove('flipped');
+        }, 600); // Match this duration with the CSS transition
+    }
+
+    // Function to open the modal
+    function openModal() {
+        document.getElementById('instructionsModal').style.display = 'block';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById('instructionsModal').style.display = 'none';
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById('instructionsModal');
+        if (event.target
+::contentReference[oaicite:0]{index=0}
+ 
