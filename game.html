@@ -4,6 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>King's Cup - Single Player</title>
+
+
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  
+
+
+
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +23,7 @@
         Click "Draw Card" to flip
       </div>
       <div class="side back" id="cardBack">
-        <!-- Card text will appear here -->
+        <img src="cardback.png" alt="Card Back" class="card-image"> <!-- Hardcoded back of the card image -->
       </div>
     </div>
   </div>
@@ -90,35 +100,20 @@
   <script>
     // Sample deck of cards with text descriptions
     const deck = [
-      'Ace - Waterfall',
-      '2 - You',
-      '3 - Me',
-      '4 - Floor',
-      '5 - Guys',
-      '6 - Chicks',
-      '7 - Heaven',
-      '8 - Mate',
-      '9 - Rhyme',
-      '10 - Categories',
-      'Jack - Rule',
-      'Queen - Question Master',
-      'King - King’s Cup'
+      { name: 'Ace - Waterfall', image: 'ace.png' },
+      { name: '2 - You', image: '2.png' },
+      { name: '3 - Me', image: '3.png' },
+      { name: '4 - Floor', image: '4.png' },
+      { name: '5 - Guys', image: '5.png' },
+      { name: '6 - Chicks', image: '6.png' },
+      { name: '7 - Heaven', image: '7.png' },
+      { name: '8 - Mate', image: '8.png' },
+      { name: '9 - Rhyme', image: '9.png' },
+      { name: '10 - Categories', image: '10.png' },
+      { name: 'Jack - Rule', image: 'jack.png' },
+      { name: 'Queen - Question Master', image: 'queen.png' },
+      { name: 'King - King’s Cup', image: 'king.png' }
     ];
-const cardImages = {
-  "Ace": "img/ace.png",
-  "2": "img/two.png",
-  "3": "img/three.png",
-  "4": "img/four.png",
-  "5": "img/five.png",
-  "6": "img/six.png",
-  "7": "img/seven.png",
-  "8": "img/eight.png",
-  "9": "img/nine.png",
-  "10": "img/ten.png",
-  "Jack": "img/jack.png",
-  "Queen": "img/queen.png",
-  "King": "img/king.png"
-};
     // Function to draw a card and animate the flip
     function drawCard() {
       const randomCard = deck[Math.floor(Math.random() * deck.length)];
@@ -129,7 +124,7 @@ const cardImages = {
       // Optionally, reset flip after some time to allow repeated draws
       setTimeout(() => {
         card1.classList.remove('flipped');
-      }, 2000); // 2 seconds delay
+      }, 3000); // 3 seconds delay
     }
 
     // Toggle instructions panel on/off
