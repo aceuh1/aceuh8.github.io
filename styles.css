@@ -21,14 +21,26 @@ img{
     height: 70vh;
 
 }
-h1{
+h1, h2, li, p, button{
     text-align: center;
+    font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+font-size: xx-large;
 }
 a{
     font-size: xx-large;
+    font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+
 }
 body{
-    background-color: #1f0033;
+    background-color:black;
+    font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+font-size: larger;
 }
 p{
     font-size: large;
@@ -39,7 +51,7 @@ p{
       align-items: center;
       justify-content: center;
     
-      font-family: Arial, sans-serif;
+     
       margin: 0;
       padding: 20px;
       min-height: 100vh;
