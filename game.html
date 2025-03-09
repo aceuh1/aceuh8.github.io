@@ -123,19 +123,24 @@ function drawCard() {
 
   // Check if an image exists inside the card back
   let img = cardBack.querySelector('img');
-
   if (!img) {
-    // Create an image if it doesn't exist
     img = document.createElement('img');
     img.classList.add('card-image'); // Apply the same styling
     cardBack.appendChild(img);
   }
-
-  // Update the image source with the drawn card's image
   img.src = randomCard.image;
   img.alt = randomCard.name;
 
-  // Flip the card to reveal the new image
+  // Check if a text element exists inside the card back
+  let cardText = cardBack.querySelector('.card-text');
+  if (!cardText) {
+    cardText = document.createElement('p');
+    cardText.classList.add('card-text');
+    cardBack.appendChild(cardText);
+  }
+  cardText.textContent = randomCard.name; // Update the text with the drawn card's name
+
+  // Flip the card to reveal the new image and text
   const card = document.getElementById('card1');
   card.classList.add('flipped');
 
