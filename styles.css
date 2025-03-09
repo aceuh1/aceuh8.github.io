@@ -101,7 +101,7 @@ p{
     }
     .card1 .back {
       
-      color: #000;
+      color: #fff;
       transform: rotateY(180deg);
     }
     .buttons {
