@@ -149,5 +149,12 @@ p{
   font-weight: bold;
   margin-top: 10px;
   color: white;
+  opacity: 1;
+  /* This animation starts after a 3-second delay and then fades out over 1 second */
+  animation: fadeOut 1s 3s forwards;
 }
 
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
