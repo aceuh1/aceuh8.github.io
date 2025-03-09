@@ -10,7 +10,7 @@
 .card {
     width: 150px;
     padding: 10px;
-   
+   border: solid white;
     border-radius: 8px;
     text-align: center;
     
