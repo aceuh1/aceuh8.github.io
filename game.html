@@ -117,18 +117,33 @@
       { name: 'Queen - Question Master', image: 'queen.png' },
       { name: 'King - King’s Cup', image: 'king.png' }
     ];
-    // Function to draw a card and animate the flip
-    function drawCard() {
-      const randomCard = deck[Math.floor(Math.random() * deck.length)];
-      const cardBack = document.getElementById('cardBack');
-      cardBack.textContent = randomCard;
-      const card = document.getElementById('card1');
-      card1.classList.add('flipped');
-      // Optionally, reset flip after some time to allow repeated draws
-      setTimeout(() => {
-        card1.classList.remove('flipped');
-      }, 3000); // 3 seconds delay
-    }
+function drawCard() {
+  const randomCard = deck[Math.floor(Math.random() * deck.length)];
+  const cardBack = document.getElementById('cardBack');
+
+  // Check if an image exists inside the card back
+  let img = cardBack.querySelector('img');
+
+  if (!img) {
+    // Create an image if it doesn't exist
+    img = document.createElement('img');
+    img.classList.add('card-image'); // Apply the same styling
+    cardBack.appendChild(img);
+  }
+
+  // Update the image source with the drawn card's image
+  img.src = randomCard.image;
+  img.alt = randomCard.name;
+
+  // Flip the card to reveal the new image
+  const card = document.getElementById('card1');
+  card.classList.add('flipped');
+
+  // Optionally reset the flip after some time
+  setTimeout(() => {
+    card.classList.remove('flipped');
+  }, 3000); // Flip back after 3 seconds
+}
 
     // Toggle instructions panel on/off
     function toggleInstructions() {
