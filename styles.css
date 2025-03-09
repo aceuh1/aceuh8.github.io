@@ -1,5 +1,7 @@
 
-
+.hide{
+    display: none;
+}
 
 .card-container {
     display: flex;
