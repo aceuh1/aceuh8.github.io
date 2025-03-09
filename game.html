@@ -18,24 +18,26 @@
 </head>
 <body>
   <div class="card-container1">
-    <div class="card1" id="card1">
-      <div class="side front">   <img src="cardback.png" alt="Card Back" class="card-image"> <!-- Hardcoded back of the card image -->
-      
-      </div> 
-
-
-      
-      <div class="side back" id="cardBack">
-     
-      </div>
+  <div class="card1" id="card1">
+    <div class="side front">
+      <img src="cardback.png" alt="Card Back" class="card-image">
+    </div>
+    <div class="side back" id="cardBack">
+      <!-- The card image will be updated here -->
     </div>
   </div>
-  <p>  Click "Draw Card" to flip</p>  
-  <div class="buttons">
-    <button onclick="drawCard()">Draw Card</button>
-    <button onclick="toggleInstructions()">King's Cards</button>
-    <button onclick="losePoint()"> I Drank! </button>
-  </div>
+</div>
+
+<!-- New element for displaying the card name below the card -->
+<p id="cardName"></p>
+
+<p>Click "Draw Card" to flip</p>  
+<div class="buttons">
+  <button onclick="drawCard()">Draw Card</button>
+  <button onclick="toggleInstructions()">King's Cards</button>
+  <button onclick="losePoint()">I Drank!</button>
+</div>
+
 
   <div id="instructions">
 
@@ -125,22 +127,17 @@ function drawCard() {
   let img = cardBack.querySelector('img');
   if (!img) {
     img = document.createElement('img');
-    img.classList.add('card-image'); // Apply the same styling
+    img.classList.add('card-image'); // Apply styling
     cardBack.appendChild(img);
   }
   img.src = randomCard.image;
   img.alt = randomCard.name;
 
-  // Check if a text element exists inside the card back
-  let cardText = cardBack.querySelector('.card-text');
-  if (!cardText) {
-    cardText = document.createElement('p');
-    cardText.classList.add('card-text');
-    cardBack.appendChild(cardText);
-  }
-  cardText.textContent = randomCard.name; // Update the text with the drawn card's name
+  // Update external element for the card's name
+  const cardNameElement = document.getElementById('cardName');
+  cardNameElement.textContent = randomCard.name;
 
-  // Flip the card to reveal the new image and text
+  // Flip the card to reveal the new image
   const card = document.getElementById('card1');
   card.classList.add('flipped');
 
@@ -149,6 +146,7 @@ function drawCard() {
     card.classList.remove('flipped');
   }, 3000); // Flip back after 3 seconds
 }
+
 
     // Toggle instructions panel on/off
     function toggleInstructions() {
