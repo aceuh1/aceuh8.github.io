@@ -121,30 +121,29 @@
       { name: 'King’s Cup', image: 'king.png' }
     ];
 function drawCard() {
-  // Hide the instruction text on the first draw
-  const instructionText = document.getElementById('instructionText');
-  if (instructionText) {
-    instructionText.classList.add('hide');
-  }
-
   const randomCard = deck[Math.floor(Math.random() * deck.length)];
   const cardBack = document.getElementById('cardBack');
 
-  // Check if an image exists inside the card back
+  // Update the card image
   let img = cardBack.querySelector('img');
   if (!img) {
     img = document.createElement('img');
-    img.classList.add('card-image'); // Apply styling
+    img.classList.add('card-image');
     cardBack.appendChild(img);
   }
   img.src = randomCard.image;
   img.alt = randomCard.name;
 
-  // Update external element for the card's name (if you have one)
+  // Update the external card name element
   const cardNameElement = document.getElementById('cardName');
-  if (cardNameElement) {
-    cardNameElement.textContent = randomCard.name;
-  }
+  cardNameElement.textContent = randomCard.name;
+
+  // Reset the fade-out animation so it replays every time a card is drawn.
+  cardNameElement.style.animation = 'none';  // Remove previous animation
+  // Trigger a reflow to reset the animation state
+  void cardNameElement.offsetWidth;
+  // Reapply the animation (fadeOut animation defined in CSS)
+  cardNameElement.style.animation = 'fadeOut 1s 3s forwards';
 
   // Flip the card to reveal the new image
   const card = document.getElementById('card1');
@@ -153,7 +152,7 @@ function drawCard() {
   // Optionally reset the flip after some time
   setTimeout(() => {
     card.classList.remove('flipped');
-  }, 3000); // Flip back after 3 seconds
+  }, 3000);
 }
 
     // Toggle instructions panel on/off
