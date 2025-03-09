@@ -121,6 +121,16 @@
       { name: 'King’s Cup', image: 'king.png' }
     ];
 function drawCard() {
+
+
+  // Hide the instruction text on the first draw
+  const instructionText = document.getElementById('instructionText');
+  if (instructionText) {
+    instructionText.classList.add('hide');
+  }
+
+//Pick randonm card from deck 
+  
   const randomCard = deck[Math.floor(Math.random() * deck.length)];
   const cardBack = document.getElementById('cardBack');
 
