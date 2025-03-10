@@ -128,6 +128,29 @@
       { name: 'Question Master', image: 'queen.png' },
       { name: 'King’s Cup', image: 'king.png' }
     ];
+
+
+let drinkCount = 0;
+const drinkSound = new Audio("glug.mp3"); // Load the audio file
+
+function losePoint() {
+    drinkCount++;
+
+    // Reset audio and start at 5 seconds
+    drinkSound.currentTime = 5; 
+    drinkSound.play();
+
+    // Check if the button has been pressed 10 times
+    if (drinkCount >= 10) {
+        alert("You have to down the King's Cup!");
+        drinkCount = 0; // Reset count after message
+    }
+}
+
+
+
+
+    
 function drawCard() {
 
 
