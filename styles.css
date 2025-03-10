@@ -115,7 +115,9 @@ p{
       transform: rotateY(180deg);
     }
     .buttons {
+        margin-top: 10px;
       margin-bottom: 20px;
+        display: contents;
     }
     .buttons button {
       margin: 0 10px;
