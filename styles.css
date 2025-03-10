@@ -119,6 +119,11 @@ p{
       margin-bottom: 20px;
         display: contents;
     }
+.buttons2{
+        margin-top: 10px;
+    margin-bottom: 20px;
+   
+}
     .buttons button {
       margin: 0 10px;
       padding: 10px 20px;
