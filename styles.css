@@ -4,8 +4,9 @@ a{
 }
 
 .gamepic{
-    width: 28%;
+    width: 60%;
     height: auto;
+    margin-bottom: 125px;
 }
 .hide{
     display: none;
