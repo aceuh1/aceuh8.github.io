@@ -44,8 +44,10 @@
 <div class="buttons2">
   <button onclick="drawCard()">Draw Card</button>
  <button onclick="losePoint()">I Drank!</button>
-  <br>
-  <button onclick="toggleInstructions()">King's Cards</button>
+  <br> <br> <br>
+  
+  <div class="container" >    
+  <button onclick="toggleInstructions()">King's Cards</button></div>
  
 </div>
 
@@ -138,12 +140,15 @@ const drinkSound = new Audio("glug.mp3"); // Load the audio file
 function losePoint() {
     drinkCount++;
 
-    // Reset audio and start at 5 seconds
-    drinkSound.currentTime = 5; 
-    drinkSound.play();
+   
 
     // Check if the button has been pressed 10 times
     if (drinkCount >= 10) {
+
+       // Reset audio and start at 5 seconds
+            drinkSound.currentTime = 5; 
+            drinkSound.play();
+      
         alert("You have to down the King's Cup!");
         drinkCount = 0; // Reset count after message
     }
