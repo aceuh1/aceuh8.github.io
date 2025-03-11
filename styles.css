@@ -6,7 +6,7 @@ a{
 .gamepic{
     width: 60%;
     height: auto;
-    margin-bottom: 70px;
+    margin-bottom: 125px;
 }
 .hide{
     display: none;
@@ -48,12 +48,21 @@ h1, h2, li, p{
 font-size: xx-large;
 }
 button{
-     text-align: center;
+   text-align: center;
     font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
-font-size: large;
+font-size: xx-large;
+color: black;
+border-radius: 0px;
+margin: 15px;
 }
+
+.container{
+  display: center;
+  text-align: center;
+}
+
 a{
     font-size: xx-large;
     font-family: "Pixelify Sans", sans-serif;
