@@ -136,18 +136,20 @@
 
 let drinkCount = 0;
 const drinkSound = new Audio("glug.mp3"); // Load the audio file
+const drinkFx = new Audio("Oof.mp3");
 
 function losePoint() {
     drinkCount++;
-
+    
+    drinkFx.play();
    
-
     // Check if the button has been pressed 10 times
     if (drinkCount >= 10) {
-
+      
        // Reset audio and start at 5 seconds
-            drinkSound.currentTime = 5; 
-            drinkSound.play();
+    drinkSound.currentTime = 5; 
+    drinkSound.play();
+
       
         alert("You have to down the King's Cup!");
         drinkCount = 0; // Reset count after message
