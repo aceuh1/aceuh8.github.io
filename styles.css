@@ -53,9 +53,10 @@ button{
   font-optical-sizing: auto;
   font-weight: 400;
 font-size: xx-large;
-color: black;
+color: #fff;
 border-radius: 0px;
 margin: 15px;
+    background-color: #1a539f ;
 }
 
 .container{
@@ -71,7 +72,7 @@ a{
 
 }
 body{
-    background-color:black;
+    background-color: steelblue;
     font-family: "Pixelify Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
