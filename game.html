@@ -140,7 +140,8 @@
 let drinkCount = 0;
 const drinkSound = new Audio("glug.mp3"); // Load the audio file
 const drinkFx = new Audio("Oof.mp3");
-
+const drawcardio = new Audio("drawcardio.mp3");
+    
 function losePoint() {
     drinkCount++;
     
@@ -172,6 +173,9 @@ function drawCard() {
     instructionText.classList.add('hide');
   }
 
+
+  drawcardio.play();
+  
 //Pick randonm card from deck 
   
   const randomCard = deck[Math.floor(Math.random() * deck.length)];
