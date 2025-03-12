@@ -1,3 +1,11 @@
+.homescreen{
+  background-color:black;
+  border-radius: 15px;
+}
+.title{
+  font-size: 40px;
+  
+}
 a{
     text-decoration: none;
     color: white;
@@ -47,6 +55,9 @@ h1, h2, li, p{
   font-weight: 600;
 font-size: xx-large;
 }
+h1{
+  margin-top: 2px;
+}
 button{
    text-align: center;
     font-family: "Pixelify Sans", sans-serif;
@@ -57,6 +68,7 @@ color: #fff;
 border-radius: 0px;
 margin: 15px;
     background-color: #1a539f ;
+    opacity: 0.92;
 }
 
 .container{
@@ -132,11 +144,12 @@ p{
       color: #fff;
       transform: rotateY(180deg);
     }
-    .buttons {
-        margin-top: 10px;
-      margin-bottom: 20px;
-        display: contents;
-    }
+ .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Add space from the bottom */
+}
 .buttons2{
         margin-top: 10px;
     margin-bottom: 20px;
@@ -195,4 +208,13 @@ p{
 }
 .body1{
    background-color: black; 
+   background-image: url("https://media.tenor.com/Zo2kqLr_5EAAAAAM/crown.gif") ;
+   background-size: contain;
+   display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    text-align: center
 }
