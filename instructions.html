@@ -3,81 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>instructions</title>
-
-        
-
+    <title>Instructions</title>
     
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-  
-
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css" >
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="container py-4">
     
-    <h2>King's Cup Instructions</h2> <p>Click the "Draw Card" button to draw a card. The card will flip to reveal its value and rule for 5 seconds, now show the other players the card. Follow the King's Cup rules based on the card drawn. Everyone starts out with 10 lives. If a rule forces someone to drink, they tap the "I Drank" button and lose a life The first person to run out of points downs the King's Cup. The game continues until the players hit the "Go back to Homescreen" button. </p>
+    <h2 class="text-center">King's Cup Instructions</h2>
+    <p class="text-justify">Click the "Draw Card" button to draw a card. The card will flip to reveal its value and rule for 5 seconds, now show the other players the card. Follow the King's Cup rules based on the card drawn. Everyone starts out with 10 lives. If a rule forces someone to drink, they tap the "I Drank" button and lose a life. The first person to run out of points downs the King's Cup. The game continues until the players hit the "Go back to Homescreen" button.</p>
     
-    <h1>King's Cup Cards</h1>
-    <div class="card-container">
-        <div class="card">
-            <h2>Ace</h2>
-            <p>Waterfall: You start drinking and everyone drinks too until you stop.</p>
+    <h1 class="text-center">King's Cup Cards</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let card of cards">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Ace</h2>
+                <p class="card-text">Waterfall: You start drinking and everyone drinks too until you stop.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Two</h2>
-            <p>You: Choose two people to drink.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Two</h2>
+                <p class="card-text">You: Choose two people to drink.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Three</h2>
-            <p>Me: If you pick this card you drink.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Three</h2>
+                <p class="card-text">Me: If you pick this card you drink.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Four</h2>
-            <p>Floor: Everyone has to touch the ground. Last to touch the floor drinks.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Four</h2>
+                <p class="card-text">Floor: Everyone has to touch the ground. Last to touch the floor drinks.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Five</h2>
-            <p>Guys: All men drink.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Five</h2>
+                <p class="card-text">Guys: All men drink.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Six</h2>
-            <p>Chicks: All women drink.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Six</h2>
+                <p class="card-text">Chicks: All women drink.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Seven</h2>
-            <p>Heaven: All players reach for the sky. Last person to put thier hands up drinks. </p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Seven</h2>
+                <p class="card-text">Heaven: All players reach for the sky. Last person to put their hands up drinks.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Eight</h2>
-            <p>Mate: Choose one of the players to be youe mate. You and your mate both take drinks.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Eight</h2>
+                <p class="card-text">Mate: Choose one of the players to be your mate. You and your mate both take drinks.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Nine</h2>
-            <p>Rhyme: Say a word, Take turns saying rhyming words with the original wihtout repeats. First person to pause or not rhyme drinks.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Nine</h2>
+                <p class="card-text">Rhyme: Say a word, take turns saying rhyming words with the original without repeats. First person to pause or not rhyme drinks.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Ten</h2>
-            <p>Categories: Take turn naming things within a category you choose. First player to miss has to drink.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Ten</h2>
+                <p class="card-text">Categories: Take turns naming things within a category you choose. First player to miss has to drink.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Jack</h2>
-            <p>Rule: Create a rule everyone must follow for the rest of the game.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Jack</h2>
+                <p class="card-text">Rule: Create a rule everyone must follow for the rest of the game.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>Queen</h2>
-            <p>Question Master: Take turn asking questions to each other quickly. First to pause or laugh has to drink.</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">Queen</h2>
+                <p class="card-text">Question Master: Take turns asking questions to each other quickly. First to pause or laugh has to drink.</p>
+            </div>
         </div>
-        <div class="card">
-            <h2>King</h2>
-            <p>King's Cup: Add drink to the cup, whoever runs out of lives first downs the cup!</p>
+        <div class="col">
+            <div class="card p-3 shadow-sm">
+                <h2 class="card-title">King</h2>
+                <p class="card-text">King's Cup: Add drink to the cup, whoever runs out of lives first downs the cup!</p>
+            </div>
         </div>
     </div>
-
-<div class="buttons">
-<button> <a href="index.html"> Back to Home</a></button>
-</div>
+    
+    <div class="buttons text-center mt-4">
+        <button> <a href="index.html"> Back to Home</a></button>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
